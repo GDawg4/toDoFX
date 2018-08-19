@@ -6,12 +6,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
+
 public class Main extends Application {
+    public ArrayList<TasksList> listOfLists = new ArrayList();
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Mis Listas");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
     }
