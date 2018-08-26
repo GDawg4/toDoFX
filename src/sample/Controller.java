@@ -1,6 +1,8 @@
 package sample;
 
-import javafx.beans.Observable;
+import javafx.beans.InvalidationListener;
+import javafx.collections.ListChangeListener;
+import sample.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,11 +13,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.skin.TextAreaSkin;
 import javafx.stage.Stage;
+import sample.TasksList;
 
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 
 public class Controller {
@@ -23,16 +29,16 @@ public class Controller {
     TableView<TasksList> mainList;
 
     @FXML
-    private TableColumn<TasksList, String > name;
+    private TableColumn name;
 
     @FXML
-    private TableColumn<TasksList, String >  date;
+    private TableColumn date;
 
     @FXML
-    private TableColumn<TasksList, String >  pending;
+    private TableColumn pending;
 
     @FXML
-    private TableColumn<TasksList, String >  estimate;
+    private TableColumn estimate;
 
     public void show(ActionEvent event){
         Parent root;
@@ -48,32 +54,26 @@ public class Controller {
             e.printStackTrace();
         }
     }
-/*
+
     @FXML
-    public void initialize(){
-        ObservableList<TasksList> listOfLists = FXCollections.observableArrayList(
-             new TasksList(
-                     "1",
-                     "2",
-                     "3"
-                )
-        );
-        name.setCellValueFactory(
-                new PropertyValueFactory<TasksList, String >("Nombre")
-        );
-        date.setCellValueFactory(
-                new PropertyValueFactory<TasksList, String>("Fecha")
-        );
-        pending.setCellValueFactory(
-                new PropertyValueFactory<TasksList, String>("Pendiente")
-        );
-        estimate.setCellValueFactory(
-                new PropertyValueFactory<TasksList, String>("Precio estimado")
+    public void initialize() {
+        MainList mainListObject = new MainList();
+        ObservableList<TasksList> listOfLists =  FXCollections.observableArrayList(mainListObject.getMainList());
+
+        name.setCellValueFactory (
+                new PropertyValueFactory <TasksList, String>("Name")
         );
 
+        date.setCellValueFactory(
+                new PropertyValueFactory<TasksList, String>("Date")
+        );
+        pending.setCellValueFactory(
+                new PropertyValueFactory<TasksList, String>("Description")
+        );
+        estimate.setCellValueFactory(
+                new PropertyValueFactory<TasksList, String>("Prueba")
+        );
         mainList.setItems(listOfLists);
 
     }
-    */
-
 }
