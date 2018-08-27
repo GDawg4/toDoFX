@@ -30,6 +30,7 @@ public class NewListWindowController {
         stage.close();
     }
 
+    @FXML
     public void addNewList(ActionEvent event){
         String newDate = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
         TasksList newTaskList = new TasksList(
@@ -37,7 +38,7 @@ public class NewListWindowController {
                 "1",
                 newDate
         );
-        
+        //Main.
     }
 
     public void saveText(ActionEvent event){
