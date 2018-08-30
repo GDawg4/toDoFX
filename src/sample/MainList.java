@@ -1,7 +1,7 @@
 package sample;
 
 import java.util.ArrayList;
-
+//Clase MainList
 public class MainList {
     private ArrayList<TasksList> mainList;
 

@@ -6,6 +6,7 @@ public class Task {
     private Float price;
     private int quantity;
 
+    //Setters
     public Float getPrice() {
         return price;
     }

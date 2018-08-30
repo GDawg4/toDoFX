@@ -56,7 +56,7 @@ public class Controller {
     }
 
 
-
+    //Inicializa la lista actual y muestra los atributos en la tabla correspondiente
     @FXML
     public void initialize() {
         MainList mainListObject = new MainList();

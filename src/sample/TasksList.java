@@ -11,8 +11,8 @@ public class TasksList {
     SimpleStringProperty date;
     SimpleStringProperty prueba;
 
-    //private Float totalCost = this.getTotalCost();
-    //private ArrayList<Task> tasks = new ArrayList();
+    private Float totalCost = this.getTotalCost();
+    private ArrayList<Task> tasks = new ArrayList();
 
     public TasksList(String name, String description, String date) {
         this.name = new SimpleStringProperty();
@@ -28,6 +28,7 @@ public class TasksList {
         this.prueba.set("0");
     }
 
+    //Setters y Getters
     public String getName() {
         return name.get();
     }
@@ -76,13 +77,10 @@ public class TasksList {
         this.prueba.set(prueba);
     }
 
-    /*
     public Float getTotalCost() {
         float totalCost = 0;
         for (Task task: tasks){
             totalCost += task.getPrice() * task.getQuantity();
         }
         return totalCost;
-    }
-    */
 }
